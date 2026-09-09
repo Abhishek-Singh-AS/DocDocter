@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What administrative roles are described in the Maratha government?",
+    "expected_answer": "The Maratha administration included roles like the Peshwa (chief minister), Majumdar or Amatya (finance minister), Shurunavis (secretary for correspondence), Dabir (foreign minister), Sar-e-Naubat (army commander), Vakyaanavis (record keeper and spy chief), Pandit Rao (treasury chairman), and a Judge.",
+    "expected_keywords": ["Peshwa", "Majumdar", "Amatya"]
+  },
+  {
+    "question": "Who was appointed as the first Peshwa by Chhatrapati Shahu?",
+    "expected_answer": "Balaji Vishwanath was appointed as Peshwa in 1713 by Chhatrapati Shahu.",
+    "expected_keywords": ["Balaji Vishwanath", "1713"]
+  },
+  {
+    "question": "What does the word Peshwa mean and where does it come from?",
+    "expected_answer": "Peshwa comes from the Persian word 'pesh', meaning foremost or leader, signifying a position of prime ministerial advisory status.",
+    "expected_keywords": ["Persian", "pesh", "foremost"]
+  },
+  {
+    "question": "What is the capital of France?",
+    "expected_answer": "I don't have enough information in the documents to answer that.",
+    "expected_keywords": []
+  }
+]
