@@ -81,7 +81,9 @@ Open `http://localhost:5173`
 
 ## Live demo
 
-🔗 [Add link here once deployed]
+🔗 [https://docspider.vercel.app](https://docspider.vercel.app)
+
+Note: the backend runs on a free hosting tier and may take 30-60 seconds to respond if it's been idle — this is expected, not a bug.
 
 ## What I learned
 
