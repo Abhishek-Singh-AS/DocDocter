@@ -83,7 +83,20 @@ def clear_all_vectors():
     Deletes every vector currently stored in the Pinecone index.
     Used when the user wants to start fresh with a new document
     instead of building a multi-document knowledge base.
+
+    Pinecone quirk: if the index has never had any vectors added
+    (no namespace exists yet), calling delete(delete_all=True) throws
+    a 404 "Namespace not found" error instead of doing nothing. Since
+    an empty index is already exactly the state we want, we treat
+    that specific error as a harmless no-op rather than a real failure.
     """
     pc = Pinecone(api_key=PINECONE_API_KEY)
     index = pc.Index(PINECONE_INDEX_NAME)
-    index.delete(delete_all=True)
+
+    try:
+        index.delete(delete_all=True)
+    except Exception as e:
+        if "Namespace not found" in str(e) or "404" in str(e):
+            pass  # index was already empty -- nothing to clear, totally fine
+        else:
+            raise  # a genuinely different error should still surface
