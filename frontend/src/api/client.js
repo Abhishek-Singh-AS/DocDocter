@@ -5,7 +5,7 @@
  * Render), it only needs to change in this one place.
  */
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 export async function ingestFile(file) {
   // File uploads must be sent as FormData, not JSON -- this matches

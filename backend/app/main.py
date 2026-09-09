@@ -13,13 +13,10 @@ app = FastAPI(title="DocSpider API")
 # CORS: allows your React frontend (running on a different port/origin)
 # to actually call this API from the browser. Without this, the browser
 # blocks every request before it even reaches your endpoints.
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # your Vite dev server's address
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+allow_origins=[
+        "http://localhost:5173",
+        "https://*.vercel.app",  # placeholder -- we'll replace with your exact Vercel URL once deployed
+    ],
 
 
 @app.get("/")
