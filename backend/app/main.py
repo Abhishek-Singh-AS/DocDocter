@@ -13,11 +13,16 @@ app = FastAPI(title="DocSpider API")
 # CORS: allows your React frontend (running on a different port/origin)
 # to actually call this API from the browser. Without this, the browser
 # blocks every request before it even reaches your endpoints.
-allow_origins=[
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
         "http://localhost:5173",
-        "https://*.vercel.app",  # placeholder -- we'll replace with your exact Vercel URL once deployed
+        "https://docspider.vercel.app",
     ],
-
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
